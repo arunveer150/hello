@@ -87,23 +87,15 @@ router.get('/films/:filmId', function(req,res){
 
 const b=req.params.filmId
 const checkId= function(){
- for(let i=0;i<films.length;i++){
-     if(films[i].id===b){
-         console.log(films[i])
-     }
-     else {continue;}
- }
-//  for(let i=0;i<films.length;i++){
-//      if(films[i].id===b){
-//          continue;
-//      } else {console.log("No such movie exists here")}
-//  }
+    if(b<=(films.length+1)){
+        console.log(films[b-1])
+    } else {
+        console.log("no such movie exists with this ID ")
+    }
 }
 checkId()
- res.get("done")
+res.get("Done")
 })
-
-
 
 module.exports = router;
 // adding this comment for no reason
